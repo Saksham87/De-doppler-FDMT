@@ -1,5 +1,13 @@
 #Used to de-doppler a setigen frame
 
+import setigen as stg
+import bifrost as bf
+from bifrost.fdmt import Fdmt
+import numpy as np
+
+import matplotlib.pyplot as plt
+from astropy import units as u
+
 #Generation of setigen frame
 frame = stg.Frame(fchans=1024*u.pixel,tchans=20*u.pixel,df=1*u.Hz,dt=10*u.s,fch1=6095*u.MHz)
 noise = frame.add_noise(x_mean=10, noise_type='chi2')
